@@ -65,11 +65,8 @@ Resources:
           UserData:
             Fn::Base64: !Sub |
               #!/bin/bash
-              #apt-get install unzip awscli -y
               apt-get install apache2 -y
               sudo systemctl start apache2.service
-              #sudo a2dissite 000-default.conf
-              #sudo systemctl reload apache2.service
               sudo mkdir /var/www/udagram
               cd /var/www/udagram
               sudo wget -p https://udacity-lesson3.s3-us-west-2.amazonaws.com/index.html
@@ -82,8 +79,8 @@ Resources:
               sed -e 's/html/udagram/' /etc/apache2/sites-available/udagram.conf
               sed '13 i\        ServerName https://udacity-lesson3.s3-us-west-2.amazonaws.com/index.html' /etc/apache2/sites-available/udagram.conf
               sudo a2ensite udagram.conf
-              service apache2 reload
-
+              sudo systemctl reload apache2
+              
           ImageId: ami-07b4f3c02c7f83d59
           SecurityGroups:
           - Ref: WebServerSecGroup
