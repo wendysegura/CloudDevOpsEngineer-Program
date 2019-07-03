@@ -1,6 +1,7 @@
 # Deploy a High-Availability Web App using CloudFormation
 
-# Parameters: More than 1 <br /> 
+# The Basics
+## Parameters: More than 1 <br /> 
 ## Resources: LoadBalancer, Launch Configuration, AutoScaling group a health check, security groups and Listner and Target Group<br /> 
 ## Outputs: URL with Load Balancer DNS Name and "http" in front of it.<br /> 
 ## Working Test: Url to verify it works with page that reads "it works! Udagram, Udacity"<br /> 
