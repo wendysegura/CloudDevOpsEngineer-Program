@@ -72,8 +72,6 @@ Resources:
               wget -P ../../var/www/html https://udacity-lesson3.s3-us-west-2.amazonaws.com/index.html
               
           ImageId: ami-005bdb005fb00e791
-          #Not sure what to reference at line 78
-          #IamInstanceProfile: !Ref WebAppLB
           SecurityGroups:
           - Ref: WebServerSecGroup
           InstanceType: t3.medium
@@ -128,8 +126,8 @@ Resources:
               Ref: WebAppTargetGroup
           LoadBalancerArn:
             Ref: WebAppLB
-          Port: '80'
-          Protocol: HTTP
+            Port: '80'
+            Protocol: HTTP
 
     ALBListenerGroup:
         Type: AWS::ElasticLoadBalancingV2::ListenerRule
