@@ -3,9 +3,5 @@
     {
         "ParameterKey": "EnvironmentName",
         "ParameterValue": "ProjectInfrastructure"
-    },
-    {
-        "ParameterKey": "DNSName-Link",
-        "ParameterValue": "https://udacity-lesson3.s3-us-west-2.amazonaws.com/index.html"
     }
 ]
