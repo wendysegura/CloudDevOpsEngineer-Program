@@ -75,7 +75,7 @@ Resources:
               
           ImageId: ami-005bdb005fb00e791
           #Not sure what to reference at line 78
-          IamInstanceProfile: !Ref WebAppLB
+          #IamInstanceProfile: !Ref WebAppLB
           SecurityGroups:
           - Ref: WebServerSecGroup
           InstanceType: t3.medium
@@ -151,6 +151,6 @@ Outputs:
 
     WebAppLB: 
         Description: A reference to the APP's URL Link 
-        Value: !Join [ "", [ "http://", !GetAtt WebAppLB.AppLink]]
+        Value: !Join [ "", [ "http://", !GetAtt WebAppLB.DNSName]]
         Export:
-          Name: "AppLink"
+          Name: "DNSName-Link"
