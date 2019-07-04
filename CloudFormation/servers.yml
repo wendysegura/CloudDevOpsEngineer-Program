@@ -77,9 +77,10 @@ Resources:
               cd /etc/apache2/sites-available/
               sudo cp 000-default.conf udagram.conf
               sed -e 's/html/udagram/' /etc/apache2/sites-available/udagram.conf
-              sed '13 i\        ServerName https://udacity-lesson3.s3-us-west-2.amazonaws.com/index.html' /etc/apache2/sites-available/udagram.conf
+              sed '13 i\        ServerName serve-WebAp-T2V8SBNCGH2P-1300696136.us-west-2.elb.amazonaws.com' /etc/apache2/sites-available/udagram.conf
               sudo a2ensite udagram.conf
-              sudo systemctl reload apache2
+              sudo service apache2 reload
+              #sudo systemctl reload apache2
               
           ImageId: ami-07b4f3c02c7f83d59
           SecurityGroups:
