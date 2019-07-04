@@ -24,14 +24,15 @@ Resources:
               CidrIp: 0.0.0.0/0
             SecurityGroupEgress:
             - IpProtocol: tcp
+              #might need to change back
+              FromPort: 8080
+              ToPort: 8080
+              CidrIp: 0.0.0.0/0
+            - IpProtocol: tcp
+            #might need to be back to 8080 for to/from
               FromPort: 80
               ToPort: 80
               CidrIp: 0.0.0.0/0
-              #might need to be back to 8080 for to/from
-              #- IpProtocol: tcp
-              #FromPort: 8080
-              #ToPort: 8080
-              #CidrIp: 0.0.0.0/0
     #WebServer Security Group
     WebServerSecGroup:
         Type: AWS::EC2::SecurityGroup
@@ -64,24 +65,22 @@ Resources:
           UserData:
             Fn::Base64: !Sub |
               #!/bin/bash
-              apt-get install apache2 -y
-              sudo systemctl start apache2.service
-              sudo mkdir /var/www/udagram
-              cd /var/www/udagram
-              sudo wget -p https://udacity-lesson3.s3-us-west-2.amazonaws.com/index.html
-              cd udacity-lesson3.s3-us-west-2.amazonaws.com
-              sudo mv index.html ..
-              sudo rm -rf udacity-lesson3.s3-us-west-2.amazonaws.com
-
-              cd /etc/apache2/sites-available/
-              sudo cp 000-default.conf udagram.conf
-              sed -e 's/html/udagram/' /etc/apache2/sites-available/udagram.conf
-              sed '13 i\        ServerName serve-WebAp-T2V8SBNCGH2P-1300696136.us-west-2.elb.amazonaws.com' /etc/apache2/sites-available/udagram.conf
-              sudo a2ensite udagram.conf
-              sudo service apache2 reload
-              #sudo systemctl reload apache2
-              
-          ImageId: ami-07b4f3c02c7f83d59
+              # Install docker
+              apt-get update
+              apt-get install -y apt-transport-https ca-certicates 
+              curl gnupg-agent  software-properties-common
+              curl -f sSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - 
+              sudo add-apt-repository \
+              "deb [arch=amd64] https://download.docker.com/linux/ubuntu/ \
+              $(lsb_release -cs) \
+              stable"
+              apt-get update
+              apt-get install -y docker-ce
+              usermod -aG docker docker ubuntu
+              docker run -p 8080:8080 tomcat:8.0
+              wget -p /var/www/html https://udacity-lesson3.s3-us-west-2.amazonaws.com/index.html
+          ImageId: ami-005bdb005fb00e791
+          KeyName: Tomcat
           SecurityGroups:
           - Ref: WebServerSecGroup
           InstanceType: t3.medium
