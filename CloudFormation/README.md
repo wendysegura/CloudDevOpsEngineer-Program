@@ -9,6 +9,8 @@ http://serve-WebAp-11D6GNCP7035O-557630779.us-west-2.elb.amazonaws.com
 1) Go to services
 2) Search for CloudFormation click on it
 3) Now you can view the stacks you will be creating from the terminal
+![How to search](/images/Cloudformation.png)
+
 
 ### Login to your AWS CLI 
 Link on How to Set AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html </br>
