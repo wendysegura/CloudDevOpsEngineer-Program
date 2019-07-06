@@ -28,10 +28,12 @@ Now we can create the stacks:</br>
 Once that stack has completed you can run:</br>
 `./create.sh servers servers.yml server_parameters.json`</br>
 
-You can go to your aws console you should have something like screenshot below:
-<img src="https://github.com/wendysegura/CloudDevOpsEngineer-Program/blob/master/CloudFormation/Images/stacks.png" width="400" height="500"> 
-To view your website click on Exports and then click on link next to **DNSName-Link** like screenshot below:
-<img src="https://github.com/wendysegura/CloudDevOpsEngineer-Program/blob/master/CloudFormation/Images/Exports.png" width="600" height="800"> 
+You can go to your aws console you should have something like screenshot below:</br>
+<img src="https://github.com/wendysegura/CloudDevOpsEngineer-Program/blob/master/CloudFormation/Images/stacks.png" width="400" height="500"> </br>
+
+To view your website click on Exports and then click on link next to **DNSName-Link** like screenshot below:</br>
+<img src="https://github.com/wendysegura/CloudDevOpsEngineer-Program/blob/master/CloudFormation/Images/Exports.png" width="600" height="800"> </br>
+
 # Udacity Project Architecture
 <img src="https://github.com/wendysegura/CloudDevOpsEngineer-Program/blob/master/CloudFormation/Images/Udacity-Infrastructure.jpg" width="900" height="600"> 
 
