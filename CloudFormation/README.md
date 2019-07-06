@@ -8,8 +8,10 @@ http://serve-WebAp-11D6GNCP7035O-557630779.us-west-2.elb.amazonaws.com
 ### Login in to your aws console:</br>
 1) Go to services
 2) Search for CloudFormation click on it
-3) Now you can view the stacks you will be creating from the terminal
-![How to search](/images/Cloudformation.png)
+3) Now you can view the stacks you will be creating from the terminal</br>
+
+<img src="https://github.com/wendysegura/CloudDevOpsEngineer-Program/blob/master/CloudFormation/Images/Cloudformation.png" width="300" height="500"> 
+
 
 
 ### Login to your AWS CLI 
