@@ -5,12 +5,12 @@ http://serve-WebAp-11D6GNCP7035O-557630779.us-west-2.elb.amazonaws.com
 
 ## How to
 
-### Login in to your aws console:</br>
+### AWS Console:</br>
 1) Go to services
 2) Search for CloudFormation click on it
 3) Now you can view the stacks you will be creating from the terminal</br>
 
-<img src="https://github.com/wendysegura/CloudDevOpsEngineer-Program/blob/master/CloudFormation/Images/Cloudformation.png" width="500" height="300"> 
+<img src="https://github.com/wendysegura/CloudDevOpsEngineer-Program/blob/master/CloudFormation/Images/Cloudformation.png" width="500" height="400"> 
 
 
 
@@ -30,9 +30,15 @@ Once that stack has completed you can run:</br>
 `./create.sh servers servers.yml server_parameters.json`</br>
 
 You can go to your aws console you should have something like screenshot below </br>
+<img src="https://github.com/wendysegura/CloudDevOpsEngineer-Program/blob/master/CloudFormation/Images/stacks.png" width="500" height="600"> 
 
 
 To view your website click on Exports and then click on link next to **DNSName-Link** like screenshot below</br>
+<img src="https://github.com/wendysegura/CloudDevOpsEngineer-Program/blob/master/CloudFormation/Images/Exports.png" width="500" height="600"> 
+
+# Udacity Project Architecture
+<img src="https://github.com/wendysegura/CloudDevOpsEngineer-Program/blob/master/CloudFormation/Images/Udacity-Infrastructure.jpg" width="600" height="800"> 
+
 
 
 
