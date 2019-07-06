@@ -1,6 +1,6 @@
 # Deploy a High-Availability Web App using CloudFormation
 
-# My link to project showing it successfully works:</br>
+Link to project showing it successfully works:</br>
 http://serve-WebAp-11D6GNCP7035O-557630779.us-west-2.elb.amazonaws.com
 
 ## How to
